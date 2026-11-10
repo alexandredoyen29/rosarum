@@ -508,3 +508,32 @@
  		$(SUDO) make -j32 && \
  		$(SUDO) make install
  
+--- a/targets/synthetic/cyrus-imapd-3.12.1/Makefile
++++ b/targets/synthetic/cyrus-imapd-3.12.1/Makefile
+@@ -18,7 +18,7 @@ $(SAFE_TARGET): $(ORIGINAL_REPO)
+ 	cp -r ./original/* ./safe/cyrus-imapd-3.12.1
+ 	cd ./safe/cyrus-imapd-3.12.1/ && \
+ 		autoreconf -i && \
+-		./configure --prefix=$(PWD)/safe/cyrus-imapd-3.12.1/root --enable-static=yes --enable-shared=no && \
++		./configure --host=arm-linux-gnueabihf --prefix=$(PWD)/safe/cyrus-imapd-3.12.1 --enable-static=yes --enable-shared=no && \
+ 		make && \
+ 		make install && \
+ 		cp ./root/libexec/imapd ../imapd
+@@ -29,7 +29,7 @@ $(BACKDOORED_TARGET): $(ORIGINAL_REPO)
+ 	cd ./backdoored/cyrus-imapd-3.12.1/ && \
+ 		patch -p1 < ../../patches/backdoored.patch && \
+ 		autoreconf -i && \
+-		./configure --prefix=$(PWD)/backdoored/cyrus-imapd-3.12.1/root --enable-static=yes --enable-shared=no && \
++		./configure --host=arm-linux-gnueabihf --prefix=$(PWD)/ground-truth/cyrus-imapd-3.12.1 --enable-static=yes --enable-shared=no && \
+ 		make && \
+ 		make install && \
+ 		cp ./root/libexec/imapd ../imapd
+@@ -40,7 +40,7 @@ $(GROUND_TRUTH_TARGET): $(ORIGINAL_REPO)
+ 	cd ./ground-truth/cyrus-imapd-3.12.1/ && \
+ 		patch -p1 < ../../patches/ground-truth.patch && \
+ 		autoreconf -i && \
+-		./configure --prefix=$(PWD)/ground-truth/cyrus-imapd-3.12.1/root --enable-static=yes --enable-shared=no && \
++		./configure --host=arm-linux-gnueabihf --prefix=$(PWD)/ground-truth/cyrus-imapd-3.12.1 --enable-static=yes --enable-shared=no && \
+ 		make && \
+ 		make install && \
+ 		cp ./root/libexec/imapd ../imapd
