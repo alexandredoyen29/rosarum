@@ -38,3 +38,6 @@
 	path = targets/authentic/php-8.1.0-dev/original
 	url = git@github.com:php/php-src.git
 	branch = master
+[submodule "targets/synthetic/cyrus-imapd-3.12.1/original"]
+	path = targets/synthetic/cyrus-imapd-3.12.1/original
+	url = git@github.com:cyrusimap/cyrus-imapd.git
