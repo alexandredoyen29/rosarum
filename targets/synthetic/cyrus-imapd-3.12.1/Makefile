@@ -27,7 +27,7 @@ $(BACKDOORED_TARGET): $(ORIGINAL_REPO)
 	mkdir -p ./backdoored/cyrus-imapd-3.12.1
 	cp -r ./original/* ./backdoored/cyrus-imapd-3.12.1
 	cd ./backdoored/cyrus-imapd-3.12.1/ && \
-		patch -p1 < ../patches/backdoored.patch && \
+		patch -p1 < ../../patches/backdoored.patch && \
 		autoreconf -i && \
 		./configure --prefix=$(PWD)/backdoored/cyrus-imapd-3.12.1/root --enable-static=yes --enable-shared=no && \
 		make && \
@@ -38,7 +38,7 @@ $(GROUND_TRUTH_TARGET): $(ORIGINAL_REPO)
 	mkdir -p ./ground-truth/cyrus-imapd-3.12.1
 	cp -r ./original/* ./ground-truth/cyrus-imapd-3.12.1
 	cd ./ground-truth/cyrus-imapd-3.12.1/ && \
-		patch -p1 < ../patches/ground-truth.patch && \
+		patch -p1 < ../../patches/ground-truth.patch && \
 		autoreconf -i && \
 		./configure --prefix=$(PWD)/ground-truth/cyrus-imapd-3.12.1/root --enable-static=yes --enable-shared=no && \
 		make && \
