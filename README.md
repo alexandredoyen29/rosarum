@@ -42,7 +42,7 @@ The benchmarks are also split into two large categories:
 #### Synthetic backdoor benchmarks
 
 | Name                         | Backdoor description                                                 |
-| ----------------------       | -------------------------------------------------------------------- |
+| ---------------------------- | -------------------------------------------------------------------- |
 | [sudo]                       | Hardcoded credentials bypass authentication                          |
 | [libpng]                     | Secret image metadata values enable command execution                |
 | [libsndfile]                 | Secret sound file metadata value triggers home directory encryption  |
