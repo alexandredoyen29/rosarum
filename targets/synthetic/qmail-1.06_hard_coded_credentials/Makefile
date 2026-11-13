@@ -1,4 +1,4 @@
-TARGET = qmail-1.06_hard_coded_credentials
+TARGET = qmail-popup
 ORIGINAL_REPO = original
 
 SAFE_TARGET = safe/$(TARGET)
@@ -31,3 +31,51 @@ $(SAFE_TARGET): $(ORIGINAL_REPO)
 		CC=gcc make && \
 		cp qmail-popup ../.. && \
 		cp qmail-pop3d ../..
+	cp -r mailbox safe/
+
+$(BACKDOORED_TARGET): $(ORIGINAL_REPO)
+	mkdir -p ./backdoored/build
+	cp -r original/* ./backdoored/build
+	cd ./backdoored/build && patch -p1 < ../../patches/base.patch
+	cd ./backdoored/build && patch -p1 < ../../patches/backdoored.patch
+	cd ./backdoored/build/checkpassword-0.90 && \
+		make clean && \
+		CC=gcc make && \
+		cp checkpassword ../..
+	sed -re "s/%USER/$(USER)/g" -i ./backdoored/build/netqmail-1.06/conf-users
+	sed -re "s/%GROUP/$(GROUP)/g" -i ./backdoored/build/netqmail-1.06/conf-groups
+	cd ./backdoored/build/netqmail-1.06 && \
+		make clean && \
+		CC=gcc make && \
+		cp qmail-popup ../.. && \
+		cp qmail-pop3d ../..
+	cp -r mailbox backdoored/
+
+$(GROUND_TRUTH_TARGET): $(ORIGINAL_REPO)
+	mkdir -p ./ground-truth/build
+	cp -r original/* ./ground-truth/build
+	cd ./ground-truth/build && patch -p1 < ../../patches/base.patch
+	cd ./ground-truth/build && patch -p1 < ../../patches/ground-truth.patch
+	cd ./ground-truth/build/checkpassword-0.90 && \
+		make clean && \
+		CC=gcc make && \
+		cp checkpassword ../..
+	sed -re "s/%USER/$(USER)/g" -i ./ground-truth/build/netqmail-1.06/conf-users
+	sed -re "s/%GROUP/$(GROUP)/g" -i ./ground-truth/build/netqmail-1.06/conf-groups
+	cd ./ground-truth/build/netqmail-1.06 && \
+		make clean && \
+		CC=gcc make && \
+		cp qmail-popup ../.. && \
+		cp qmail-pop3d ../..
+	cp -r mailbox ground-truth/
+
+clean:
+	rm -rf ./backdoored ./safe ./ground-truth
+
+setup:
+#   No-op.
+
+teardown:
+#   No-op.
+
+.PHONY: clean all safe backdoored ground-truth setup teardown
