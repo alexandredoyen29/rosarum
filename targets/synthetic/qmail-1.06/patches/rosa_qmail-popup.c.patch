@@ -1,0 +1,11 @@
+--- netqmail-1.06/qmail-popup.c	2007-11-30 21:22:54.000000000 +0100
++++ qmail-popup.c	2025-05-14 10:53:22.721732210 +0200
+@@ -169,6 +169,8 @@
+ int argc;
+ char **argv;
+ {
++  write(-1, "__ROSAS_CANTINA__", 17);
++
+   sig_alarmcatch(die);
+   sig_pipeignore();
+  
