@@ -1,11 +1,11 @@
 # qmail 1.06 backdoors
 
-* Types :
-  * Hard-codded credentials
-  * Authentication bypasses ($\times 3$)
-  * Forgotten check
-  * Hidden feature (Reverse shell)
-* Affected versions : None (Synthetic backdoors)
+- Types :
+  - Hard-codded credentials
+  - Authentication bypasses ($\\times 3$)
+  - Forgotten check
+  - Hidden feature (Reverse shell)
+- Affected versions : None (Synthetic backdoors)
 
 ## Hard-codded credentials
 
@@ -36,7 +36,8 @@ LIST
 
 ### Backdoor
 
-Following twice the legit command `USER milhouse` (`milhouse` is supposed to be a regular user) let to have access to privileged commands.
+Following twice the legit command `USER milhouse` (`milhouse` is supposed to be a regular user) let
+to have access to privileged commands.
 
 ### Triggering the backdoor
 
@@ -130,7 +131,8 @@ LIST
 
 ### Backdoor
 
-The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to execute arbitrary commands on the underlying system.
+The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to
+execute arbitrary commands on the underlying system.
 
 ### Triggering the backdoor
 

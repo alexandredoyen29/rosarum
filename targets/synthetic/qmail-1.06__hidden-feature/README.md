@@ -5,7 +5,8 @@
 
 ### Backdoor
 
-The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to execute arbitrary commands on the underlying system.
+The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to
+execute arbitrary commands on the underlying system.
 
 ### Triggering the backdoor
 

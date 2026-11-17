@@ -1,0 +1,64 @@
+diff --git a/targets/synthetic/qmail-1.06/README.md b/targets/synthetic/qmail-1.06/README.md
+index ab3d300..f42cf04 100644
+--- a/targets/synthetic/qmail-1.06/README.md
++++ b/targets/synthetic/qmail-1.06/README.md
+@@ -1,11 +1,11 @@
+ # qmail 1.06 backdoors
+ 
+-* Types :
+-  * Hard-codded credentials
+-  * Authentication bypasses ($\times 3$)
+-  * Forgotten check
+-  * Hidden feature (Reverse shell)
+-* Affected versions : None (Synthetic backdoors)
++- Types :
++  - Hard-codded credentials
++  - Authentication bypasses ($\\times 3$)
++  - Forgotten check
++  - Hidden feature (Reverse shell)
++- Affected versions : None (Synthetic backdoors)
+ 
+ ## Hard-codded credentials
+ 
+@@ -36,7 +36,8 @@ LIST
+ 
+ ### Backdoor
+ 
+-Following twice the legit command `USER milhouse` (`milhouse` is supposed to be a regular user) let to have access to privileged commands.
++Following twice the legit command `USER milhouse` (`milhouse` is supposed to be a regular user) let
++to have access to privileged commands.
+ 
+ ### Triggering the backdoor
+ 
+@@ -130,7 +131,8 @@ LIST
+ 
+ ### Backdoor
+ 
+-The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to execute arbitrary commands on the underlying system.
++The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to
++execute arbitrary commands on the underlying system.
+ 
+ ### Triggering the backdoor
+ 
+@@ -140,4 +142,4 @@ $ ./qmail-popup-backdoored-4_hidden_feature_shell.ori localhost ./checkpassword
+ USER secretshell
+ sh-5.2$ echo Coucou
+ Coucou
+-```
+\ No newline at end of file
++```
+diff --git a/targets/synthetic/qmail-1.06__hidden-feature/README.md b/targets/synthetic/qmail-1.06__hidden-feature/README.md
+index b601997..9057580 100644
+--- a/targets/synthetic/qmail-1.06__hidden-feature/README.md
++++ b/targets/synthetic/qmail-1.06__hidden-feature/README.md
+@@ -5,7 +5,8 @@
+ 
+ ### Backdoor
+ 
+-The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to execute arbitrary commands on the underlying system.
++The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to
++execute arbitrary commands on the underlying system.
+ 
+ ### Triggering the backdoor
+ 
+
