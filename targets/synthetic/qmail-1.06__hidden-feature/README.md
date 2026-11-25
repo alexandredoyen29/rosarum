@@ -3,12 +3,12 @@
 - **Type**: hidden feature (reverse shell)
 - **Affected versions**: none (synthetic backdoor)
 
-### Backdoor
+## Backdoor
 
 The secret argument `secretshell` for the command `USER` opens a reverse shell, permitting to
 execute arbitrary commands on the underlying system.
 
-### Triggering the backdoor
+## Triggering the backdoor
 
 ```console
 $ ./qmail-popup localhost ./checkpassword ./qmail-pop3d ./mailbox/
