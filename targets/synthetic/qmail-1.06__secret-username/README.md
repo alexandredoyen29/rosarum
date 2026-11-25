@@ -1,4 +1,4 @@
-# qmail-1.06 hidden username
+# qmail-1.06 secret username
 
 - **Type**: authentication bypass
 - **Affected versions**: none (synthetic backdoor)
