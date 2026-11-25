@@ -3,11 +3,11 @@
 - **Type**: unchecked authentication
 - **Affected versions**: none (synthetic backdoor)
 
-### Backdoor
+## Backdoor
 
 Privileged command such as `LIST` are directly available, and permits to gain access to all commands.
 
-### Triggering the backdoor
+## Triggering the backdoor
 
 ```console
 $ ./qmail-popup localhost ./checkpassword ./qmail-pop3d ./mailbox/
