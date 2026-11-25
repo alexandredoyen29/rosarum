@@ -5,7 +5,8 @@
 
 ## Backdoor
 
-Privileged command such as `LIST` are directly available, and permits to gain access to all commands.
+Privileged command such as `LIST` are directly available, and permits to gain access to all
+commands.
 
 ## Triggering the backdoor
 

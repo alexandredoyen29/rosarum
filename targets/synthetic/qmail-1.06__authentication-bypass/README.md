@@ -5,7 +5,9 @@
 
 ## Backdoor
 
-Using legitimate commands `USER you_shall_not_pass`, `USER big_brother_is_watching_you`, `USER 0118-999-881-999-119-7253` in any order, followed by `PASS you_shall_not_pass`, and at the end `PASS <anything>` let gaining access to all privileged commands.
+Using legitimate commands `USER you_shall_not_pass`, `USER big_brother_is_watching_you`,
+`USER 0118-999-881-999-119-7253` in any order, followed by `PASS you_shall_not_pass`, and at the end
+`PASS <anything>` let gaining access to all privileged commands.
 
 ## Triggering the backdoor
 
